@@ -27,7 +27,6 @@ function OpenXML (){
         }
         echo "\n";
         echo "Комментарии к заказу: " . $xml->DeliveryNotes . "\n";
-
         foreach ($xml->Items->Item as $item) {
             echo "--------------"."\n";
             echo "Артикул товара: " . $item->attributes() . "\n";
