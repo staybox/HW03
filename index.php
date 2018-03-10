@@ -6,3 +6,6 @@
  * Time: 0:30
  */
 require_once "functions.php";
+
+// Первое задание
+OpenXML();
