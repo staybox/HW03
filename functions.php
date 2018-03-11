@@ -73,5 +73,18 @@ function task2($arr){
 }
 
 function task3 (){
+    // Создание массива из случайных чисел
+    for($i=0; $i<50; $i++) {
+        $arr[$i] = rand(1,100);
+    }
+    $arrayTwo[] = $arr;
 
+    // Открытие файла и запись в файл
+    $fp = fopen('task3.csv', 'w');
+
+    foreach ($arrayTwo as $fields) {
+        fputcsv($fp, $fields);
+    }
+
+    fclose($fp);
 }
