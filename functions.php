@@ -6,7 +6,7 @@
  * Time: 0:30
  */
 
-function OpenXML (){
+function task1 (){
     if (file_exists('data.xml')) {
         $xml = simplexml_load_file('data.xml');
         echo "Номер заказа: " . $xml->attributes()['PurchaseOrderNumber'] . "\n";
@@ -42,4 +42,36 @@ function OpenXML (){
     } else {
         exit('Не удалось открыть файл data.xml.');
     }
+}
+
+function task2($arr){
+    $en = json_encode($arr);
+
+    file_put_contents('output.json', $en);
+
+    // Читаем первый файл
+    $jsonString = file_get_contents('output.json');
+    $dataOne = json_decode($jsonString, true);
+
+    // Меняем данные в массиве и записываем их во второй файл
+    $dataTwoReplace = [['a' => 66, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5],['q' => 88, 's' => 25, 'z' => 33, 't' => 49, 'o' => 56]];
+    $basket = array_replace($dataOne,$dataTwoReplace);
+    $newJsonString = json_encode($basket);
+    file_put_contents('output2.json', $newJsonString);
+
+    // Читаем второй файл
+    $get = file_get_contents('output2.json');
+    $dataTwo = json_decode($get,true);
+
+    // Проверяем расхождения массивов
+    for($i=0;$i<2;$i++) {
+        $result1 = array_diff($dataOne[$i], $dataTwo[$i]);
+        $result2 = array_diff($dataTwo[$i], $dataOne[$i]);
+        print_r($result1);
+        print_r($result2);
+    }
+}
+
+function task3 (){
+
 }
