@@ -87,4 +87,17 @@ function task3 (){
     }
 
     fclose($fp);
+    $sum = 0;
+    for($i=0;$i<count($arr);$i++)
+    {
+        if($arr[$i] % 2==0)
+        {
+            echo $arr[$i].' - четное.' . "\n";
+            $sum += $arr[$i];
+            //echo "Сумма: " . $sum . "\n";
+
+        }
+    }
+    echo "Сумма: " . $sum . "\n";
 }
+
