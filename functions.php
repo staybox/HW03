@@ -101,3 +101,6 @@ function task3 (){
     echo "Сумма: " . $sum . "\n";
 }
 
+function task4(){
+
+}

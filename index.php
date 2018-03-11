@@ -15,4 +15,7 @@ require_once "functions.php";
 //task2($arr);
 
 // Третье задание
-task3();
+//task3();
+
+// Четвертое задание
+task4();
