@@ -18,4 +18,4 @@ require_once "functions.php";
 //task3();
 
 // Четвертое задание
-task4();
+//task4();

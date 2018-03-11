@@ -101,6 +101,18 @@ function task3 (){
     echo "Сумма: " . $sum . "\n";
 }
 
-function task4(){
+function task4()
+{
+    $url = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
+    $content = file_get_contents($url);
+    $json = json_decode($content, true);
+    print_r($json["query"]["pages"]["15580374"]["title"]. "\n");
+    print_r($json["query"]["pages"]["15580374"]["pageid"]);
 
+    //  2. Вывести title и page_id
+    //$result = array_shift($json["query"]["pages"]);
+    //foreach ($result as $value) {
+    //    var_dump($value); //$value . "\n";
+    //}
 }
+
