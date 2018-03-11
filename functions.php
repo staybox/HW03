@@ -45,8 +45,8 @@ function task1 (){
 }
 
 function task2($arr){
+    // Преобразование в JSON и запись в первый файл
     $en = json_encode($arr);
-
     file_put_contents('output.json', $en);
 
     // Читаем первый файл
